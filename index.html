@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <script>
+      function calculate() {
+        // Get the values of the two input fields
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        
+        // Get the selected operation
+        var operator = document.getElementById("operator").value;
+        
+        // Perform the calculation based on the selected operator
+        var result;
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            result = num1 / num2;
+            break;
+          default:
+            result = "Invalid operator";
+        }
+        
+        // Display the result
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    
+    <form>
+      <input type="number" id="num1" placeholder="Enter a number">
+      
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      
+      <input type="number" id="num2" placeholder="Enter another number">
+      
+      <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    
+    <p id="result"></p>
+  </body>
+</html>
